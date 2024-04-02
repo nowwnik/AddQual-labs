@@ -1,25 +1,27 @@
 let game = false
-let randomNumber 
+let randomNumber
 let playerGuess
 let attemptCount = 1
+let number = 10
 
-function guessTheNumberGame () { 
+function guessTheNumberGame() {
 
-while (true){
+    while (true) {
 
         if (game === false) {
-            startGame()
-        }  
 
-    // игра
-        while (game){
-        
-            playerGuess =  prompt('введите число от 1 до 10')
+            startGame()
+        }
+
+        // игра
+        while (game) {
+
+            playerGuess = prompt(`введите число от 1 до ${number}`)
             // првоерка типа
-            if (answerChecker(playerGuess)){
+            if (answerChecker(playerGuess)) {
                 // проверка ответа 
-                if (+playerGuess === randomNumber){
-                    
+                if (+playerGuess === randomNumber) {
+
                     alert('Вы выйграли!')
                     endOfGame()
                 }
@@ -31,27 +33,44 @@ while (true){
                     if (+playerGuess < randomNumber)
                         alert(`Мало, номер попытки ${attemptCount}`)
 
-                    if ( attemptCount === 5 ){
-                        alert('Вы проиграли(')
+                    if (attemptCount === 5) {
+                        alert('Вы проиграли :(')
                         endOfGame()
                     }
                     attemptCount++
                     // конец игры при > 5
 
                 }
-            } else {
+            }
+            else {
                 alert('неккоректные данные')
             }
-            
+
         }
 
     }
 }
+function numberRange() {
+    number = prompt('Введите диапозон, в котором хотите играть, по умолчанию 10');
+    if (number == '') number = 10;
+    return number
+
+}
 
 function startGame() {
     game = true
-    alert('сейчас компьютер загадает число от 1 до 10, у вас 5 попыток')
-    randomNumber = Math.floor(Math.random() * 10) +1;
+
+    numberRange()
+
+    if (answerChecker(number)) {
+        alert(`Cейчас компьютер загадает число от 1 до ${number}, у вас 5 попыток`)
+        randomNumber = Math.floor(Math.random() * number) + 1;
+    }
+    else {
+        alert('неккоректные данные')
+        startGame()
+    }
+
 }
 
 function endOfGame() {
