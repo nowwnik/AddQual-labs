@@ -247,6 +247,7 @@ header {
 .second_block {
     display: flex;
     justify-content: flex-start;
+    text-align: center;
 }
 
 .bloques {
@@ -364,26 +365,19 @@ textarea {
 
 /*adaptation to different screens*/
 
-/* Extra large devices (large desktops, 1200px and up)*/
+/* Extra large devices (large desktops, 1200px and down)*/
 @media screen and (max-width: 1200px) {
     .container {
-        width: 80%;
+        width: 90%;
     }
 
     .wrapper {
         flex-direction: column;
     }
 
-    .offer {
-        width: 100%;
-        margin-top: 40px;
-    }
-
-    .offer_text {
-        width: 100%;
-    }
-
     .header_img {
+        width: 40%;
+        height: 40%;
         margin-top: 40px;
         margin-left: 100px;
     }
@@ -392,25 +386,45 @@ textarea {
         width: 70%;
     }
 
+}
+
+/* Large devices (desktops, 992px and down)*/
+@media screen and (max-width: 992px) {
+
+    .main_title {
+        padding: 0 10px 10px 120px;
+    }
+
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .header_img {
+        display: none;
+    }
+
+    .blocks {
+        margin-top: 20px;
+        width: 120%;
+    }
+
+    .second_block {
+        font-size: 120%;
+        text-align: center;
+        margin-bottom: 30px;
+        font-family: 'Ubuntu', sans-serif;
+    }
+
     .main_block {
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
 
-    .blocks {
-        margin-top: 40px;
-    }
-
-    .second_block {
-        font-size: 30px;
-        text-align: center;
-        margin-bottom: 30px;
-        font-family: 'Ubuntu', sans-serif;
-    }
-
-    input, textarea {
-        width: 100%;
+    input,
+    textarea {
+        width: 120%;
+        height: 15%;
     }
 
     .button {
@@ -418,67 +432,32 @@ textarea {
         height: 50px;
     }
 
-    .main_title {
-        padding: 0 10px 10px 120px;
-    }
 }
 
-/* Large devices (desktops, 992px and up)*/
-@media screen and (max-width: 992px) {
-    .container {
-        width: 80%;
-    }
-
-    .form {
-        width: 100%;
-    }
-
-}
-
-/* Medium devices (tablets, 768px and up)*/
+/* Medium devices (tablets, 768px and down)*/
 @media screen and (max-width: 768px) {
-    .container {
-        width: 80%;
-    }
-
-    .offer {
-        width: 300%;
-        margin-top: 40px;
-    }
-
-    .offer_text {
-        width: 35%;
-    }
 
     .form {
-        width: 100%;
-    }
-
-    .multi .line:nth-child(1) {
-        font-size: 180%;
+        width: 150%;
     }
 
 }
 
-/*Small devices (landscape phones, 576px and up)*/
+/*Small devices (landscape phones, 576px and down)*/
 @media screen and (max-width: 576px) {
     .container {
         width: 50%;
     }
 
-    .header_img {
-        margin-top: 40px;
-        margin-left: -20px;
-        width: 250px;
-        height: 250px;
+    input,
+    textarea {
+        width: 130%;
+        height: 20%;
     }
 
-    .multi .line:nth-child(1) {
-        font-size: 100%;
-    }
-
-    .multi .line:nth-child(3) {
-        font-size: 350%;
+    .button {
+        width: 130%;
+        height: 120%;
     }
 
     .main_title {
