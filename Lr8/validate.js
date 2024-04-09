@@ -2,47 +2,32 @@ function clearInputField() {
     document.getElementById("sending").reset();
 }
 
-function checkFirst() {
-    var first = document.getElementById("first").value;
+function checkFirstName() {
+    var first = document.getElementById("firstName").value;
     var regex = /^[а-яА-Я\s]{2,15}$/;
 
     if (regex.test(first)) {
-        document.getElementById("first_Check").style.color = "green";
-        document.getElementById("first_Check").innerHTML = "✓";
+        document.getElementById("firstname_check").style.color = "green";
+        document.getElementById("firstname_check").innerHTML = "✓";
         return true;
     } else {
-        document.getElementById("first_Check").style.color = "red";
-        document.getElementById("first_Check").innerHTML = "От 2 до 15 символов";
+        document.getElementById("firstname_check").style.color = "red";
+        document.getElementById("firstname_check").innerHTML = "От 2 до 15 символов";
         return false;
     }
 }
 
-function checkLast() {
-    var last = document.getElementById("last").value;
+function checkLastName() {
+    var last = document.getElementById("lastName").value;
     var regex = /^[а-яА-Я\s]{2,20}$/;
 
     if (regex.test(last)) {
-        document.getElementById("last_Check").style.color = "green";
-        document.getElementById("last_Check").innerHTML = "✓";
+        document.getElementById("lastname_check").style.color = "green";
+        document.getElementById("lastname_check").innerHTML = "✓";
         return true;
     } else {
-        document.getElementById("last_Check").style.color = "red";
-        document.getElementById("last_Check").innerHTML = "От 2 до 20 символов";
-        return false;
-    }
-}
-
-function checkDest() {
-    var dest = document.getElementById("dest").value;
-    var regex = /^[а-яА-Я\s.,\d ]{5,50}$/;
-
-    if (regex.test(dest)) {
-        document.getElementById("dest_Check").style.color = "green";
-        document.getElementById("dest_Check").innerHTML = "✓";
-        return true;
-    } else {
-        document.getElementById("dest_Check").style.color = "red";
-        document.getElementById("dest_Check").innerHTML = "От 5 до 50 символов";
+        document.getElementById("lastname_check").style.color = "red";
+        document.getElementById("lastname_check").innerHTML = "От 2 до 20 символов";
         return false;
     }
 }
@@ -52,41 +37,51 @@ function checkPhone() {
     var regex = /^\d{3}-(\d{2})-\d{2}$/;
 
     if (regex.test(phone)) {
-        document.getElementById("phone_Check").style.color = "green";
-        document.getElementById("phone_Check").innerHTML = "✓";
+        document.getElementById("phone_check").style.color = "green";
+        document.getElementById("phone_check").innerHTML = "✓";
         return true;
     } else {
-        document.getElementById("phone_Check").style.color = "red";
-        document.getElementById("phone_Check").innerHTML = "Некорректный номер";
+        document.getElementById("phone_check").style.color = "red";
+        document.getElementById("phone_check").innerHTML = "Номер в формате ХХХ-ХХ-ХХ";
         return false;
     }
 }
 
-function outputData() {
-    var first = document.getElementById("first").value;
-    var last = document.getElementById("last").value;
-    var dest = document.getElementById("dest").value;
-    var phone = document.getElementById("phone").value;
-    var date = document.getElementById("date").value;
-    var time = document.getElementById("time").value;
-    var dateAndTime = date + " at " + time;
-    var quantity = document.getElementById("quantity").value;
-    var paymethod = document.getElementById("paymethod").value;
+function checkDestination() {
+    var dest = document.getElementById("destination").value;
+    var regex = /^[а-яА-Я\s.,\d ]{5,50}$/;
 
-    if (first !== "" && last !== "" && dest !== "" && phone !== "" && date !== "" && time !== "" && quantity !== "") {
-        document.getElementById("summary").style.color = "black";
-        document.getElementById("summary").innerHTML = "Привет, " + first + " " + last + "!";
-        document.getElementById("summary").innerHTML += "<p>Ваш заказ успешно оформлен. Мы свяжемся с вами как можно скорее. Ниже вы можете ознакомиться с подробностями вашего заказа: </p>";
-        document.getElementById("summary").innerHTML += "<p>Номер телефона: " + phone + ".</br>";
-        document.getElementById("summary").innerHTML += "Пенкт назначения: " + dest + ".</br>";
-        document.getElementById("summary").innerHTML += "Дата и время: " + dateAndTime + ".</br>";
-        document.getElementById("summary").innerHTML += "Количество персон: " + quantity + ".</br>";
-        document.getElementById("summary").innerHTML += "Способ оплаты: " + paymethod + ".</p>";
-        document.getElementById("summary").innerHTML += "<p style='font-weight: bold;'>Спасибо, что Вы пользуетесь услугами нашей компании ☻ </p>";
+    if (regex.test(dest)) {
+        document.getElementById("destionation_check").style.color = "green";
+        document.getElementById("destionation_check").innerHTML = "✓";
+        return true;
     } else {
-        document.getElementById("summary").style.color = "red";
-        document.getElementById("summary").innerHTML = "Заполните все поля";
+        document.getElementById("destionation_check").style.color = "red";
+        document.getElementById("destionation_check").innerHTML = "От 5 до 50 символов";
+        return false;
     }
+}
+
+
+function orderInformation() {
+    let firstname = document.getElementById('firstName').value;
+    let lastname = document.getElementById('lastName').value;
+    var destination = document.getElementById("destination").value;
+    let phone = document.getElementById('phone').value;
+    let quantity = document.getElementById('quantity').value;
+
+    if (firstname != '' && lastname != '' && phone != '' && quantity != '') {
+        document.getElementById('orderSummary').innerHTML = 'Привет, ' + firstname + ' ' + lastname + ' !';
+        document.getElementById("orderSummary").innerHTML += "<p>Ваш заказ успешно оформлен. Мы свяжемся с вами как можно скорее. Ниже вы можете ознакомиться с подробностями вашего заказа: </p>";
+        document.getElementById("orderSummary").innerHTML += "Пункт назначения: " + destination + ".</br>";
+        document.getElementById('orderSummary').innerHTML += '<p>Номер телефона: ' + phone + '.</p>';
+        document.getElementById('orderSummary').innerHTML += '<p>Вы заказали : ' + quantity + ' штук.<br />';
+        document.getElementById("orderSummary").innerHTML += "<p style='font-weight: bold;'>Спасибо, что Вы пользуетесь услугами нашей компании ☻ </p>";
+    } else {
+        document.getElementById('orderSummary').style.color = 'red';
+        document.getElementById('orderSummary').innerHTML = 'Заполните все поля';
+    }
+    alert('Ваш заказ оформлен. Подробна иноформация на странице')
 
     const text = document.getElementById("hidden");
     text.style.display = "block";
