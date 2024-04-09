@@ -50,15 +50,10 @@ header {
     }
 }
 
-
-
 .container {
     width: 1100px;
     margin: 0 auto;
-}
-
-.logo {
-    margin-bottom: 20px;
+    text-align: center;
 }
 
 .wrapper {
@@ -71,13 +66,6 @@ header {
 .offer {
     width: 700px;
     font-family: 'Ubuntu', sans-serif;
-}
-
-.title {
-    font-size: 30px;
-    font-weight: bold;
-    line-height: 40px;
-    margin-bottom: 10px;
 }
 
 .title_span {
@@ -189,13 +177,11 @@ header {
     font-family: 'Ubuntu', sans-serif;
 }
 
-.blocks img {
-    margin-bottom: 30px;
-}
-
 .form {
     background-color: rgba(227, 244, 249, 1);
     width: 100%;
+    left: 0;
+    right: 0;
 }
 
 .form:hover {
@@ -236,6 +222,16 @@ header {
     }
 }
 
+.text {
+    width: 70%;
+    height: 40px;
+    text-align: center;
+    font-size: 1.1em;
+    font-family: 'Ubuntu', sans-serif;
+    margin-top: 40px;
+}
+
+
 .second_title {
     font-size: 30px;
     text-align: center;
@@ -246,49 +242,40 @@ header {
 
 .second_block {
     display: flex;
-    justify-content: flex-start;
-    text-align: center;
-}
-
-.bloques {
-    text-align: center;
-    width: 50%;
-    font-family: 'Ubuntu', sans-serif;
+    /*justify-content: flex-start;*/
+    /*justify-content: center;*/
 }
 
 .input {
-    max-width: 600px;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 50%;
+    flex-direction: column;
     font-family: 'Ubuntu', sans-serif;
+    padding: 0 10px 10px 280px;
+    /*padding-right: 10px;*/
     margin-bottom: 80px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-.blocks:hover {
-    transform: scale(1.5);
-    transition: transform 1s;
-}
 
-input,
-textarea {
-    width: 400px;
+input, textarea {
+    width: 500px;
     border-radius: 6px;
+    height: 20px;
+    padding: 2%;
     background-color: white;
     border-color: lightgrey;
     margin: 10px;
-    box-sizing: border-box;
     flex-grow: 1;
     transition: width 0.3s ease;
+    text-align: center;
 }
 
 .button {
     width: 255px;
-    height: 30px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -298,15 +285,14 @@ textarea {
     text-decoration: none;
     background-color: #FFD429;
     font-family: 'Ubuntu', sans-serif;
-    margin-left: auto;
-    margin-right: auto;
+    transition: all 0.5;
+    margin: auto;
 }
 
 .button:hover {
-    background-color: rgb(255, 248, 215);
+    background-color: rgba(249, 194, 31);
     box-shadow: 10px 10px 10px grey;
 }
-
 
 .end {
     background: linear-gradient(90deg, rgba(2, 0, 36.1), rgba(70, 70, 221), rgba(0, 212, 255, 1));
@@ -364,7 +350,6 @@ textarea {
 }
 
 /*adaptation to different screens*/
-
 /* Extra large devices (large desktops, 1200px and down)*/
 @media screen and (max-width: 1200px) {
     .container {
@@ -421,6 +406,10 @@ textarea {
         justify-content: center;
     }
 
+    .input-block{
+        width: 80%;
+    }
+    
     input,
     textarea {
         width: 120%;
