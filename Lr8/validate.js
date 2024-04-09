@@ -81,6 +81,7 @@ function orderInformation() {
         document.getElementById('orderSummary').style.color = 'red';
         document.getElementById('orderSummary').innerHTML = 'Заполните все поля';
     }
+    
     alert('Ваш заказ оформлен. Подробна иноформация на странице')
 
     const text = document.getElementById("hidden");
