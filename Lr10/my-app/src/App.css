@@ -1,0 +1,8 @@
+.myApp {
+  width: 100%;
+  text-align: center;
+}
+.wrapper {
+  margin: 40px;
+  display: flex;
+}
