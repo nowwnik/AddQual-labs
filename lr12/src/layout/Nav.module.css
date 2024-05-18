@@ -1,0 +1,54 @@
+.nav {
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper{
+    padding: 0 40px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.logo {
+    width: 110px;
+    margin-right: 180px;
+}
+
+.link{
+    text-decoration: none;
+    color: black;
+}
+.navigationItem {
+    font-size: 24px;
+    margin: 0 20px;
+    text-align: center;
+    gap: 35px;
+}
+
+.btnRequest {
+    padding: 10px;
+    background-color: #ef7f04;
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    margin: 10px;
+    margin-left: 180px;
+    cursor: pointer;     
+}
+
+.btnCalculation {
+    padding: 10px;
+    background-color: #3b3a63;
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.btnSpan {
+    margin: 0 25px 10px;
+    font-size: 16px;
+    font-weight: bold;   
+}
